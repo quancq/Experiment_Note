@@ -44,6 +44,7 @@ Matplotlib
 				plt.subplot(2, 1, 2)
 				plt.plot(x, np.cos(x));
 			```
+					
 	* Object oriented interface
 		* Giúp giải quyết tình huống phức tạp
 		* Khi cần plot trên fig, ax nào thì chỉ cần gọi hàm plot từ đối tượng đó (với matlab interface thì ta phải chuyển fig đó sang active rồi gọi plt.plot())
@@ -63,7 +64,19 @@ Matplotlib
 	* Dùng hàm ``plt.plot(x,y,fmt='o')``
 * Scatter plots với plt.scatter
 	* Phương thức này mạnh hơn plt.plot. Sự khác biệt là nó cho phép mỗi điểm dữ liệu có các thuộc tính (size, face color,...) khác nhau
-
+	* Với data gồm hàng nghìn points thì plt.plot hiệu quả hơn hẳn so với plt.scatter. Lý do là vì plt.scatter phải làm thêm 1 số việc để có thể render size/ color cho mỗi điểm dữ liệu. Còn trong plt.plot thì hình ảnh của toàn bộ data chỉ phải tính toán 1 lần, sau đó clone cho các point khác
+* Visualize error
+	* ``plt.errorbar()``
+	* ``plt.fill_between()``
+* Contour Plots
+	* Vẽ các đường đồng mức để visualize data 3 chiều trên mặt phẳng 2 chiều
+	* Các hàm hỗ trợ:
+		* ``plt.contour()``
+		* ``plt.contourf()``
+		* ``plt.imshow()``: biểu diễn mảng 2 chiều thành image
+* Histogram Plots
+	* ``plt.hist()``
+		
 
 # Các hàm hay sử dụng
 
@@ -82,3 +95,11 @@ Matplotlib
 * ``plt.xlabel()``
 * ``plt.legend()``
 * ``ax.set(title='',xlabel='',...)``
+* ``plt.scatter(x,y,marker='o')``
+* ``plt.errorbar(x, y, yerr=dy, fmt='o', color='black', ecolor='lightgray', elinewidth=3, capsize=0);``
+* ``plt.fill_between(xfit, yfit - dyfit, yfit + dyfit, color='gray', alpha=0.2)``
+* ``plt.contour(X, Y, Z, 20, cmap='RdGy')``
+* ``plt.contourf(X, Y, Z, 20, cmap='RdGy')``
+* ``plt.clabel(contours, inline=True, fontsize=8)``
+* ``plt.imshow(Z, extent=[0, 5, 0, 5], origin='lower', cmap='RdGy', alpha=0.5)``
+* ``plt.hist(data, bins=30, normed=True, alpha=0.5, histtype='stepfilled', color='steelblue', edgecolor='none');``
