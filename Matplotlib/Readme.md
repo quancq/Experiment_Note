@@ -78,6 +78,17 @@ Matplotlib
 	* ``plt.hist()``
 	* ``plt.hist2d()``
 	* ``plt.hexbin()``
+* Customized Legend
+	* 1 số tham số: loc, ncol, fancybox, shadow, frameon, framealpha
+	* Có thể chọn ra những element nào cần hiển thị legend
+	* Legend là sự giải thích cho các đối tượng trên plot, vì thế legend luôn tham chiếu đến đối tượng mà chúng giải thích. Khi cần vẽ thêm các legend mà đối tượng hiển thị ko tồn tại thì ta cần làm *giả* chúng bằng cách vẽ thêm 1 lớp rỗng (xem VD trong sách)
+	* Để tạo nhiều legend cần dùng hàm ``ax.add_artist()``
+* Custom Colorbars
+* Multiple Subplots
+	* ``plt.axes()``
+	* ``plt.subplot()``
+	* ``plt.subplots()``
+	* ``plt.GridSpec()``
 		
 
 # Các hàm hay sử dụng
@@ -105,3 +116,7 @@ Matplotlib
 * ``plt.clabel(contours, inline=True, fontsize=8)``
 * ``plt.imshow(Z, extent=[0, 5, 0, 5], origin='lower', cmap='RdGy', alpha=0.5)``
 * ``plt.hist(data, bins=30, normed=True, alpha=0.5, histtype='stepfilled', color='steelblue', edgecolor='none');``
+* ``ax.add_artist()``
+
+# Reference
+* [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) 
