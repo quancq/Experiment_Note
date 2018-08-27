@@ -20,7 +20,7 @@ Matplotlib
     	* ``%matplotlib`` để bật chế độ làm việc với Mpl
     	* Không cần gọi hàm plt.show()
     	* Gọi hàm plot là hiển thị luôn figure
-    	* Các lệnh sau đó có thể cập nhật được figure trước, nhưng sau khi thay đổi thì phải gọi hàm ``plt.draw()`` để update tường minh  
+    	* Các lệnh sau đó có thể cập nhật được figure trước, nhưng sau khi thay đổi thì phải gọi hàm ``plt.draw()`` để update tường minh 
 	* Plotting from an IPython notebook
     	* Cách plot gần giống với IPython
     	* Có 2 tùy chọn
@@ -76,6 +76,8 @@ Matplotlib
 		* ``plt.imshow()``: biểu diễn mảng 2 chiều thành image
 * Histogram Plots
 	* ``plt.hist()``
+	* ``plt.hist2d()``
+	* ``plt.hexbin()``
 		
 
 # Các hàm hay sử dụng
