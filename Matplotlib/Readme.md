@@ -89,7 +89,18 @@ Matplotlib
 	* ``plt.subplot()``
 	* ``plt.subplots()``
 	* ``plt.GridSpec()``
+* Text and Annotation
+	* ``plt.text()``
+	* Sử dụng tham số transform (trong hàm plt.text()) để xác định tọa độ truyền vào được tính theo hệ tọa độ nào
+		* ``ax.transData``: theo giá trị dữ liệu
+		* ``ax.transAxes``: theo vùng diện tích của axes
+		* ``fig.transFigure``: theo vùng diện tích của figure
+	* ``plt.annotate()``: vẽ mũi tên và text chú thích
+* Custom Ticks
+	* Major và minor ticks
+	* Tùy chỉnh location (locator) và label (formatter)
 		
+
 
 # Các hàm hay sử dụng
 
@@ -117,6 +128,10 @@ Matplotlib
 * ``plt.imshow(Z, extent=[0, 5, 0, 5], origin='lower', cmap='RdGy', alpha=0.5)``
 * ``plt.hist(data, bins=30, normed=True, alpha=0.5, histtype='stepfilled', color='steelblue', edgecolor='none');``
 * ``ax.add_artist()``
+* ``ax.text()``
+* ``ax.annotate()``
+* ``ax.xaxis.set_major_locator()``
+* ``ax.yaxis.set_minor_formatter()``
 
 # Reference
 * [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) 
