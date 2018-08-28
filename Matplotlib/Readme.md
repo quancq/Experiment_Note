@@ -99,7 +99,15 @@ Matplotlib
 * Custom Ticks
 	* Major và minor ticks
 	* Tùy chỉnh location (locator) và label (formatter)
-		
+* Seaborn
+	* ``sns.kdeplot()``: kernel density estimation, uowsc lược hàm mật độ xác suất
+	* ``sns.distplot()``: vẽ histogram và kde plot
+	* ``sns.pairplot()``, ``sns.PairGrid()``
+	* ``sns.FacetGrid()``
+	* ``sns.factorplot()``
+	* ``sns.jointplot()``
+	* ``sns.violinplot()``
+	* ``sns.()``
 
 
 # Các hàm hay sử dụng
