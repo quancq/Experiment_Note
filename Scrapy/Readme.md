@@ -108,3 +108,61 @@ Scrapy
 	* Kiểm tra item trùng lặp
 	* Lưu item vào database
 * Các class muốn làm 1 thành phần trong item pipeline cần implement hàm process_item()
+
+
+# Feed exports
+
+
+# Requests and Responses
+
+
+# Link extractors
+* Dùng để extract links từ response
+* Có thể dùng class LinkExtractor của scrapy hoặc tự viết class
+* Class cần implement hàm extract_links
+
+# Settings
+* Vị trí thiết lập settings (độ ưu tiên xét hiệu lực giảm dần)
+	* Command line options
+	* Trong spider
+	* Project settings
+	* Command line default settings
+	* Default global settings
+* Một số settings thường dùng
+	* CONCURRENT_ITEMS
+	* CONCURRENT_REQUESTS
+	* CONCURRENT_REQUESTS_PER_DOMAIN
+	* CONCURRENT_REQUESTS_PER_IP
+	* DEFAULT_ITEM_CLASS
+	* DEPTH_PRIORITY
+	* DEPTH_LIMIT
+	* DOWNLOADER_MIDDLEWARES
+	* DOWNLOAD_DELAY
+	* ITEM_PIPELINES
+	* LOG_ENABLED
+	* LOG_FILE
+	* LOG_FORMAT
+	* RANDOMIZE_DOWNLOAD_DELAY
+	* SPIDER_CONTRACTS
+	* SPIDER_MIDDLEWARES
+	* SPIDER_MODULES
+	* FEED_FORMAT
+	* FEED_STORAGES
+	* FEED_EXPORT_FIELDS
+	* FEED_URI
+	
+
+# Exception
+* Built-in Exceptions
+	* DropItem
+	* CloseSpider
+	* NotSupported
+	* ...
+
+
+# Architecture Overview
+![](./Images_Readme/scrapy_architecture_02.png)
+
+
+# References
+* [Scrapy 1.5 documentation](https://doc.scrapy.org/en/latest/index.html) 
