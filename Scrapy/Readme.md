@@ -62,3 +62,42 @@ Scrapy
 		* process_results():
 * Class CSVFeedSpider
 * Class SitemapSpider
+
+# Selector
+* Dùng để chọn ra những phần nhất định trong tài liệu HTML/XML
+* Có thể dùng Selector built-in của Scrapy hoặc dùng thư viện lxml, BeautifullSoup
+* Selector theo CSS hoặc Xpath
+	* Nên sử dụng Xpath bởi sức mạnh của nó
+	* Nên dùng CSS khi cần query theo class
+
+
+# Items
+* Trước đây, sau khi extract data từ response ta thường đóng gói dữ liệu trong dict. Cách này chỉ phù hợp với project nhỏ. Khi project có quy mô lớn hơn, ta cần đóng gói dữ liệu theo hướng OOP, giúp dễ mở rộng, tái sử dụng... Class Item là 1 cái khung giúp ta việc này (ta cần viết class kế thừa class Item)
+* Các trường dữ liệu dùng kiểu đối tượng ``Field``. Với cách này, ta có thể quy định kiểu dữ liệu cho từng field (int, str,... hoặc có thể có kiểu bất kì bằng cách không quy định hàm serializer)
+* Làm việc với Item gần giống như làm việc với dict
+* Có thể thiết kế các Item kế thừa nhau, tận dụng ưu điểm của OOP
+
+
+# Item loader
+* *Item* cung cấp khung để chứa data còn *Item loader* cung cấp cơ chế, cách thức, quy trình từ lúc extract data từ response đến khi build thành Item object
+* Nếu không có Item loader
+	* Trong hàm parse của spider ta cần parse response để return Item
+	* Ở đây có thể quy định các hàm để xử lý, biến đổi, làm sạch data trước khi return Item
+	* *Vấn đề* là
+		* Code trong hàm parse sẽ phức tạp hơn
+		* Chưa tối ưu về mặt tái sử dụng (các hàm tiền - hậu xử lý raw data để build thành Item là gắn liền với 1 quy trình nhất định, thường không phụ thuộc vào spider)
+			* Ví dụ Item là bài báo tin tức thì các hàm tiền xử lý cho mục title có thể là loại bỏ kí tự HTML, strip space. Sử dụng các hàm này bởi vì đặc tính của field trong Item là như vậy.
+			* Nếu có các Item gần giống nhau về tiền xử lý thì cũng không tái sử dụng được
+* Scrapy đưa ra khái niệm Item loader giải quyết các vấn đề trên
+	* Cung cấp các hàm tiền xử lý (input processor), hậu xử lý (output processor) có sẵn và cho phép user tự định nghĩa
+	* Khái niệm Item loader context
+	* Nested loader giúp hạn chế viết xpath, css lặp nhiều lần (nhưng tránh lạm dụng, dễ khiến code khó đọc)
+	* Cho phép kế thừa Item loader
+
+
+# Scrapy shell
+* Shell tương tác gần giống với python shell
+* Mục đích: cung cấp cách thức debug, test spider nhanh chóng
+	* Launch shell và gõ các lệnh test thử xpath (css), kiểm tra kết quả trả về, lặp lại cho đến khi tìm được biểu thức phù hợp (không mất công chạy spider nhiều lần)
+
+# Item Pipeline
