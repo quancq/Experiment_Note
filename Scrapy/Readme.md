@@ -73,7 +73,7 @@ Scrapy
 
 # Items
 * Trước đây, sau khi extract data từ response ta thường đóng gói dữ liệu trong dict. Cách này chỉ phù hợp với project nhỏ. Khi project có quy mô lớn hơn, ta cần đóng gói dữ liệu theo hướng OOP, giúp dễ mở rộng, tái sử dụng... Class Item là 1 cái khung giúp ta việc này (ta cần viết class kế thừa class Item)
-* Các trường dữ liệu dùng kiểu đối tượng ``Field``. Với cách này, ta có thể quy định kiểu dữ liệu cho từng field (int, str,... hoặc có thể có kiểu bất kì bằng cách không quy định hàm serializer)
+* Các trường dữ liệu dùng kiểu đối tượng ``Field``. Với cách này, ta có thể quy định bất kì kiểu dữ liệu cho từng field (và có thể quy định hàm serializer để serialize field này)
 * Làm việc với Item gần giống như làm việc với dict
 * Có thể thiết kế các Item kế thừa nhau, tận dụng ưu điểm của OOP
 
@@ -101,3 +101,10 @@ Scrapy
 	* Launch shell và gõ các lệnh test thử xpath (css), kiểm tra kết quả trả về, lặp lại cho đến khi tìm được biểu thức phù hợp (không mất công chạy spider nhiều lần)
 
 # Item Pipeline
+* Item sau khi được tạo nên từ spider sẽ chuyển qua các thành phần trong item pipeline để xử lý
+* Mục đích của item pipeline:
+	* Làm sạch dữ liệu
+	* Loại bỏ item không thỏa mãn tiêu chí
+	* Kiểm tra item trùng lặp
+	* Lưu item vào database
+* Các class muốn làm 1 thành phần trong item pipeline cần implement hàm process_item()
