@@ -16,7 +16,44 @@ Gradient Descent
 	* Nếu mỗi lần đến 1 vùng, ta phải hỏi đủ 1 nhóm người thì ta thường tìm được hướng đi tốt hơn, nhưng tốn thời gian hỏi
 	* Nếu mỗi lần đến 1 vùng, ta chỉ hỏi 1 vài người thì độ chính xác của kết quả thường biến động nhiều (lúc tốt, lúc xấu), nhưng giảm được thời gian hỏi đường
 
-## 2.1.
+## 2.1. Batch Gradient Descent
+* Sử dụng toàn bộ data để tính đạo hàm của hàm cost theo parameter để dùng cho **một lần** cập nhật parameter
+* Ưu điểm:
+	* Ổn định (Hàm cost giảm ồn định) trong quá trình tối ưu
+* Nhược điểm:
+	* Cập nhật chậm do phải dùng nhiều dữ liệu trong mỗi lần cập nhật
+	* Không phù hợp khi data lớn (không đẩy vào ram cùng lúc được)
+	* Không dùng cho bài toán online (các điểm dữ liệu đến theo stream)
+* Batch gradient descent đảm bảo hội tụ tới global minimum với hàm cost là convex và đảm bảo hội tụ tới local minimum với hàm cost là non-convex
+
+## 2.2. Stochastic Gradient Descent
+* Mỗi lần cập nhật parameter chỉ sử dụng 1 instance để tính đạo hàm
+* Ưu điểm:
+	* Cập nhật nhanh trong 1 lần cập nhật, thường với số lần cập nhật ít đã hội tụ (nhanh hơn so với Batch GD)
+	* Phù hợp trong bài toán online
+	* Có tiềm năng di chuyển đến local minimum tốt hơn
+* Nhược điểm:
+	* Không ổn định (hàm cost giảm không ổn định, biến thiên mạnh) trong quá trình tối ưu
+* Khi giảm learning rate thích hợp sẽ giúp cho SGD hội tụ như Batch GD
+
+## 2.3. Mini Batch Gradient Descent
+* Mỗi lần cập nhật parameter sử dụng 1 mini batch (1 lượng instance nhỏ) để tính đạo hàm
+* Biến thể này thường được dùng phổ biến hơn SGD và BGD do có sự *cân bằng* giữa 2 biến thể BGD và SGD (cân bằng được ưu - nhược điểm của 2 biến thể này)
+* Ưu điểm:
+	* Giúp ổn định hơn so với SGD trong quá trình tối ưu
+
+## 2.4. Các thách thức khi dùng Mini batch GD
+* Nếu chỉ dùng mini batch GD đơn thuần thì ta gặp phải nhiều vấn đề sau
+	* Chọn learning rate phù hợp là 1 vấn đề khó
+		* Nếu learning rate nhỏ thì quá trình hội tụ sẽ chậm, mất nhiều thời gian training
+		* Nếu learning rate lớn thì quá trình di chuyển tham số sẽ nhanh hơn, đi được đến vùng đất xa hơn. Nhưng vấn đề là khó đạt được đến local (global) minimum do *sải chân quá rộng*, khó chui vào local minimum. Thậm chí trong nhiều TH, quá trình tối ưu có thể phân kì, hàm cost tăng chứ không giảm
+	* Lập lịch learning rate theo cách truyền thống là không phù hợp
+		* Ví dụ dùng phương pháp tôi ủ (annealing) để giảm learning rate theo lịch định trước, nhưng lịch trình này phải định trước, do đó không thể đạt hiệu quả tốt trên mọi tập dataset
+	* Hiện tại dùng learning rate như nhau trong việc cập nhật mọi tham số (trong vecto tham số có nhiều tham số)
+		* Việc này chưa tốt bởi vì mỗi tham số có phạm vi khác nhau (cùng là di chuyển 1 bước nhưng với tham số 1 thì sự thay đổi này tạo ra ảnh hưởng vừa đủ, nhưng với tham số 2 thì sự thay đổi này tạo ra ảnh hưởng quá lớn)
+	* Một vấn đề khác là trong mạng neural thì thường gặp phải hàm cost là non-convex và có nhiều điểm local minimum và saddle point (điểm yên ngựa)
+		* Độ khó nằm ở saddle point, SGD khó thoát ra khỏi được điểm yên ngựa bởi vì tại đây, đạo hàm gần như bằng 0 theo mọi hướng => Không có phương hướng đi đâu về đâu !!!
+
 
 # Tài liệu tham khảo
 * [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/)
