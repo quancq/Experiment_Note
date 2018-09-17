@@ -61,6 +61,7 @@ Gradient Descent
 * Giải quyết được 1 vài vấn đề của SGD
 	* Hội tụ nhanh hơn (và giảm sự dao động hỗn độn ngược chiều liên tục) khi di chuyển trong vùng mà 1 chiều dốc hơn chiều khác
 * Công thức cập nhật tham số theta
+
 ![](./Images_Readme/Momentum_UpdateRule.png)
 	* Gamma thường có giá trị là 0.5, 0.9, 0.99. Mặc định nên chọn gamma = 0.9
 
@@ -68,6 +69,7 @@ Gradient Descent
 
 ### 3.1.2. Nesterov accelerated gradient
 * Công thức cập nhật tham số theta
+
 ![](./Images_Readme/NAG_UpdateRule.png)
 
 * Thuật toán NAG khá giống với Momentum, nhưng khác ở *vị trí tính đạo hàm*
@@ -78,18 +80,36 @@ Gradient Descent
 
 ## 3.2. Các thuật toán tự cập nhật learning rate
 
+### 3.2.1. Adagrad
+* Thuật toán này có đặc điểm
+	* Áp dụng learning rate khác nhau cho các tham số khác nhau
+	* Tự điều chỉnh learning rate
+		* *Tăng* learning rate (tương đối) đối với những tham số mà đạo hàm trong quá khứ là lớn
+		* *Giảm* learning rate (tương đối) đối với những tham số mà đạo hàm trong quá khứ là nhỏ
+	* **Nhược điểm lớn**
+		* Sự tăng (giảm) learning rate chỉ mang tính tương đối. Theo thời gian thì learning rate của từng tham số luôn giảm. Nhưng giảm nhiều hay ít là phụ thuộc vào độ lớn của đạo hàm theo tham số đó trong quá khứ
+* Công thức cập nhật tham số theta
+	* Xét từng tham số
+	![](./Images_Readme/Adagrad_UpdateRule_IndividualParam.png)
+	* Dạng vectorized
+	![](./Images_Readme/Adagrad_UpdateRule_Vectorized.png)
+	* Giải thích
+		* Phần mẫu (chứa căn bậc 2) tạo ra sự khác biệt giữa Adagrad và SGD. Phần này giúp làm giảm learning rate theo từng tham số (giảm nhiều hay ít phụ thuộc vào ma trận G)
+		* Ma trận Gt là ma trận đường chéo, trong đó phần tử gii là tổng của các bình phương grad theo tham số theta i từ vòng lặp iter 0 -> t. Nếu đạo hàm trong quá khứ lớn thì tổng tích lũy này sẽ lớn và learning rate áp dụng cho tham số này sẽ giảm nhiều
+
+
 # 4. Lựa chọn thuật toán Gradient Descent phù hợp
 
 # Tổng kết
 * Demo trực quan so sánh các thuật toán Gradient descent
 	* Biểu diễn các đường đồng mức và tiến trình hoạt động của các thuật toán
-	![](http://cs231n.github.io/assets/nn3/opt2.gif)
+	![](./Images_Readme/demo_opt2.gif)
 		* Momentum và NAG hơi bị *quá đà*, nhưng NAG nhờ quan sát tương lai nên không bị *quá đà* nhiều như Momentum
 		* SGD hội tụ chậm nhất
 	* Thực nghiệm tại vùng có saddle point
-	![](http://cs231n.github.io/assets/nn3/opt1.gif)
+	![](./Images_Readme/demo_opt1.gif)
 		* SGD bị tắc ở saddle point
-		* Các thuật toán Âdaptive Learning rate tìm ra hướng đi tốt nhanh hơn các thuật toán Momentum, NAG
+		* Các thuật toán Adaptive Learning rate tìm ra hướng đi tốt nhanh hơn các thuật toán Momentum, NAG
 		* NAG tìm ra hướng đi tốt trước Momentum
 
 
