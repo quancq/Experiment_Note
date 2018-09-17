@@ -88,15 +88,42 @@ Gradient Descent
 		* *Giảm* learning rate (tương đối) đối với những tham số mà đạo hàm trong quá khứ là nhỏ
 	* **Nhược điểm lớn**
 		* Sự tăng (giảm) learning rate chỉ mang tính tương đối. Theo thời gian thì learning rate của từng tham số luôn giảm. Nhưng giảm nhiều hay ít là phụ thuộc vào độ lớn của đạo hàm theo tham số đó trong quá khứ
+		* Theo thời gian thì learning rate sẽ tiến về 0, khi đó model không học tiếp được
 * Công thức cập nhật tham số theta
 	* Xét từng tham số
+	
 	![](./Images_Readme/Adagrad_UpdateRule_IndividualParam.png)
 	* Dạng vectorized
+	
 	![](./Images_Readme/Adagrad_UpdateRule_Vectorized.png)
 	* Giải thích
 		* Phần mẫu (chứa căn bậc 2) tạo ra sự khác biệt giữa Adagrad và SGD. Phần này giúp làm giảm learning rate theo từng tham số (giảm nhiều hay ít phụ thuộc vào ma trận G)
 		* Ma trận Gt là ma trận đường chéo, trong đó phần tử gii là tổng của các bình phương grad theo tham số theta i từ vòng lặp iter 0 -> t. Nếu đạo hàm trong quá khứ lớn thì tổng tích lũy này sẽ lớn và learning rate áp dụng cho tham số này sẽ giảm nhiều
 
+### 3.2.2. Adadelta
+* Thuật toán này khắc phục được hạn chế của Adagrad (learning rate luôn giảm sau các vòng lặp)
+* Ý tưởng
+	* Đạo hàm trong quá khứ có giá trị lớn thì learning rate giảm
+	* Bình phương đạo hàm ở vòng lặp t không cộng trực tiếp vào phần đạo hàm quá khứ (Adagrad) mà tổ hợp có trọng số. Đây là điểm mấu chốt, khắc phục được nhược điểm của Adagrad
+* Công thức cập nhật tham số theta
+
+	![](./Images_Readme/Adadelta_UpdateRule2.png)
+	hay
+	
+	![](./Images_Readme/Adadelta_UpdateRule3.png)
+	trong đó
+	
+	![](./Images_Readme/Adadelta_UpdateRule1.png)
+
+* Trong các công thức cập nhật theta đã gặp thì delta theta không có cùng đơn vị với theta. Để khắc phục điều này, ta có biến thể khác của Adadelta
+
+	![](./Images_Readme/Adadelta_UpdateRule4.png)
+	
+	![](./Images_Readme/Adadelta_UpdateRule5.png)
+	
+	![](./Images_Readme/Adadelta_UpdateRule6.png)
+
+* Với biến thể này thì ta không cần learning rate default !
 
 # 4. Lựa chọn thuật toán Gradient Descent phù hợp
 
