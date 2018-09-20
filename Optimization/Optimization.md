@@ -29,7 +29,7 @@ Gradient Descent
 ## 2.2. Stochastic Gradient Descent
 * Mỗi lần cập nhật parameter chỉ sử dụng 1 instance để tính đạo hàm
 * Ưu điểm:
-	* Cập nhật nhanh trong 1 lần cập nhật, thường với số lần cập nhật ít đã hội tụ (nhanh hơn so với Batch GD)
+	* Cập nhật nhanh trong 1 lần cập nhật, thường với số lần cập nhật ít đã hội tụ (nhanh hơn so với Batch GD). Thay vì mất thời gian tính toán lâu (khi dùng batch) thì ta chỉ dùng 1 sample để tính sẽ tiết kiệm được thời gian trong 1 vòng lặp, nhưng tradeoff là chất lượng của hướng đi không phải là tốt nhất (không ổn định)
 	* Phù hợp trong bài toán online
 	* Có tiềm năng di chuyển đến local minimum tốt hơn
 * Nhược điểm:
