@@ -125,12 +125,13 @@ Gradient Descent
 
 * Với biến thể này thì ta không cần learning rate default !
 
-# 3.2.3. RMSProb
+### 3.2.3. RMSProb
 * Thuật toán này được phát minh bởi Geoff Hinton, giống với thuật toán Adadelta (công thức đầu)
 * RMSProb và Adadelta được phát triển độc lập nhằm giải quyết vấn đề của Adagrad (learning rate luôn giảm theo thời gian)
 * Công thức cập nhật tham số theta
 
-![](./Images_Readme/RMSProb_UpdateRule.png)
+	![](./Images_Readme/RMSProb_UpdateRule.png)
+	
 	* Hinton đề xuất tham số mặc định: gamma = 0.9, learning rate = 0.001
 
 # 4. Lựa chọn thuật toán Gradient Descent phù hợp
