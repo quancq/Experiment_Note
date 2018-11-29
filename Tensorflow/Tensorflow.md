@@ -45,8 +45,8 @@ Tensorflow Fundamentals
 		* Với tf.AUTO_REUSE rất tiện lợi, nhưng nếu lạm dụng thì ta không thể kiểm soát được việc một biến không cần chia sẻ lại bị chia sẻ. Khi đó ta có thể dùng tf.make_template
 			* ```
 			conv3x32 = tf.make_template("conv3x32", lambda x: tf.layers.conv2d(x, 32, 3))
-features1 = conv3x32(image1)
-features2 = conv3x32(image2)  # Will reuse the convolution weights
+			features1 = conv3x32(image1)
+			features2 = conv3x32(image2)  # Will reuse the convolution weights
 			```
 				
 * Argument scope
@@ -63,6 +63,12 @@ features2 = conv3x32(image2)  # Will reuse the convolution weights
 			logits = fully_connected(hidden2, n_outputs, scope="outputs", activation_fn=None)
 		```
 
+* Truyền data vào chương trình
+	* Place holder
+	* Dataset API
+
+* Thứ tự thực hiện và điều khiển sự phụ thuộc
+
 # Other (Tip, Tricks, Recipe,...)
 
 * Gọi ``tf.reset_default_graph()`` ở đầu chương trình để xóa các node trong default graph, sau đó mới tạo node mới để tránh trùng lặp (chỉ khi dùng Jupyter notebook mới cần)
@@ -78,6 +84,12 @@ features2 = conv3x32(image2)  # Will reuse the convolution weights
 * ``tf.nn.l2_loss()``
 * ``tf.train.AdamOptimizer()``
 * ``tf.global_variables_initializer()``
+* ``tf.cond()``
+* ``tf.py_func()``
+* ``Dataset API``
+* ``tf.control_dependencies()``
+* ````
+* ````
 * ````
 * ````
 
