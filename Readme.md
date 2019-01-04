@@ -1,17 +1,17 @@
 # 1. Deep Learning
 * Word Embedding
-	* [] FastText
-	* [] Elmo
-	* [] Flair
+	* [ ] FastText
+	* [ ] Elmo
+	* [ ] Flair
 
 
 # 2. NLP
 * NER
-	* [] HMM
-	* [] CRF
-	* [] BiLSTM + CRF
+	* [ ] HMM
+	* [ ] CRF
+	* [ ] BiLSTM + CRF
 * Topic modeling
-	* [] LDA
+	* [ ] LDA
 
 
 # 3. Computer Vision
@@ -22,7 +22,7 @@
 * PCA
 * t-SNE
 * Optimization
-	* [] Hyperopt
+	* [ ] Hyperopt
 
 
 # 5. Big data
