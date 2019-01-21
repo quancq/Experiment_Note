@@ -14,10 +14,14 @@ Tài liệu học tập
 
 
 # 2. Computer Vision
+* Các kiến trúc mạng CNN
+* Object Detection
+* Face Recognition
 
 
 # 3. NLP
-
+* Course Cousera, CS224N, github ...
+* Sách theo chủ đề
 
 # 4. Bigdata
 
