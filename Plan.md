@@ -95,7 +95,7 @@ Tài liệu học tập
 	* [TensorFlow Guide](https://www.tensorflow.org/guide/)
 	* [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow)
 
-## 7.2. Sách Keras
+## 7.2. Keras
 
 ### 7.2.1. Sách
 * [Deep Learning with Python](https://github.com/fchollet/deep-learning-with-python-notebooks)
