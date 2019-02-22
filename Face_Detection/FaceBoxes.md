@@ -43,8 +43,7 @@ FaceBoxes
 	* A_interval: số pixel giữa 2 anchor liên tiếp
 
 * Theo công thức trên thì các kiểu anchor được sử dụng có A_density lần lượt là: 1,2,4,4,4. Như vậy anchor (32x32 và 64x64 của Inception3) là khá thưa. Do đó tỉ lệ recall trên khuôn mặt nhỏ sẽ thấp
-* Để giải quyết vấn đề này, FaceBo
-xes sẽ sinh thêm các anchor để tăng sự dày đặc. Ví dụ nếu muốn tăng A_density lên 3 lần thì sẽ sinh ra 9 anchor trên mỗi pixel của feature map thay vì 1 anchor như lúc trước
+* Để giải quyết vấn đề này, FaceBoxes sẽ sinh thêm các anchor để tăng sự dày đặc. Ví dụ nếu muốn tăng A_density lên 3 lần thì sẽ sinh ra 9 anchor trên mỗi pixel của feature map thay vì 1 anchor như lúc trước
 ![](./Images/Example_AnchorDensification.jpg)
 
 
