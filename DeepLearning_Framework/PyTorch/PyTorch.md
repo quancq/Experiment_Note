@@ -6,6 +6,8 @@ PyTorch
 
 * [JcJohnson PyTorch Example](https://github.com/jcjohnson/pytorch-examples)
 
+* [A comprehensive overview of PyTorch](https://medium.com/@layog/a-comprehensive-overview-of-pytorch-7f70b061963f)
+
 * [CS230](https://cs230-stanford.github.io/pytorch-getting-started.html)
 
 * [Pytorch Tutorial Lecture](http://web.cs.ucdavis.edu/~yjlee/teaching/ecs289g-winter2018/Pytorch_Tutorial.pdf)
