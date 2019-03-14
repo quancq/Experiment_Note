@@ -2,29 +2,41 @@ PyTorch
 ===================
 
 # References
-* [Lecture Stanford CS231n](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture8.pdf)
-
-* [JcJohnson PyTorch Example](https://github.com/jcjohnson/pytorch-examples)
 
 * [A comprehensive overview of PyTorch](https://medium.com/@layog/a-comprehensive-overview-of-pytorch-7f70b061963f)
 
 * [CS230](https://cs230-stanford.github.io/pytorch-getting-started.html)
 
+* [PyTorch tutorial distilled](https://towardsdatascience.com/pytorch-tutorial-distilled-95ce8781a89c)
+
+
+* [Deep Learning Wizard](https://www.deeplearningwizard.com/deep_learning/intro/)
+
+* [Jhui Blog](https://jhui.github.io/2018/02/09/PyTorch-Basic-operations/)
+
+
+* [https://github.com/yunjey/pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial)
+
+
+* [Official PyTorch Tutorial](https://pytorch.org/tutorials/)
+
+
+* [Lecture Stanford CS231n](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture8.pdf)
+
+* [JcJohnson PyTorch Example](https://github.com/jcjohnson/pytorch-examples)
+
 * [Pytorch Tutorial Lecture](http://web.cs.ucdavis.edu/~yjlee/teaching/ecs289g-winter2018/Pytorch_Tutorial.pdf)
 
 * [Pytorch Tutorial](https://cise.ufl.edu/~xiaoyong/materials/pytorch_tutorial.pdf)
 
-* [PyTorch tutorial distilled](https://towardsdatascience.com/pytorch-tutorial-distilled-95ce8781a89c)
+
 
 * [Getting Started with PyTorch Part 1: Understanding how Automatic Differentiation works](https://towardsdatascience.com/getting-started-with-pytorch-part-1-understanding-how-automatic-differentiation-works-5008282073ec)
 
-* [Official PyTorch Tutorial](https://pytorch.org/tutorials/)
-
-* [https://github.com/yunjey/pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial)
 
 * [The Incredible PyTorch](https://www.ritchieng.com/the-incredible-pytorch/)
 
-* [Jhui Blog](https://jhui.github.io/2018/02/09/PyTorch-Basic-operations/)
+
 
 * [Project Template](https://github.com/moemen95/Pytorch-Project-Template)
 
