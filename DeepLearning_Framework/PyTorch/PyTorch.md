@@ -1,6 +1,22 @@
 PyTorch
 ===================
 
+# Các thành phần chính
+
+* Tensor: mảng nhiều chiều lưu trữ dữ liệu
+
+* Function: hàm chuyển đổi input thành output, **không lưu các giá trị như trọng số**
+
+* Module: thực hiện chuyển đổi input thành output, hay dùng để biểu diễn layer trong mạng neuron. Điểm khác biệt so với Function là trong module sẽ **lưu các giá trị trọng số** để cập nhật trong quá trình training
+	* Module có thể chứa các module, function khác
+	* Để tạo ra custom module thì cần định nghĩa class kế thừa từ class nn.module. Đồng thời override hàm `__init__` và `forward`
+
+
+
+
+
+
+
 # References
 
 * [A comprehensive overview of PyTorch](https://medium.com/@layog/a-comprehensive-overview-of-pytorch-7f70b061963f)
