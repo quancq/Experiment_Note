@@ -3,64 +3,118 @@ Tài liệu học tập
 
 # 1. Deep Learning
 
-* Sách DL Ian Goodfellow
-* [Deep Learning Book Series · Introduction](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-Introduction/)
+## 1.1. Course
+
+* [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) 
+	* [x] [Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning)
+	* [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://www.coursera.org/learn/deep-neural-network)
+	* [Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning-projects)
+	* [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks)
+	* [] [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models)
+
+	* Course note
+		* [DeepLearning.ai Courses Notes](https://github.com/mbadry1/DeepLearning.ai-Summary)
+		* [Deep Learning Specialization by Andrew Ng — 21 Lessons Learned](https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c)
+		* [Computer Vision by Andrew Ng — 11 Lessons Learned](https://towardsdatascience.com/computer-vision-by-andrew-ng-11-lessons-learned-7d05c18a6999)
+
 * [CSC 321 Winter 2018 Intro to Neural Networks and Machine Learning](http://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/)
 * [CMSC 35246 Deep Learning Spring 2017, University of Chicago](http://ttic.uchicago.edu/~shubhendu/Pages/CMSC35246.html)
 * [Introduction to Deep Learning Spring 2018](http://deeplearning.cs.cmu.edu/spring2018.html)
 * [CS 598 LAZ: Cutting-Edge Trends in Deep Learning and Recognition](http://slazebni.cs.illinois.edu/spring17/) 
 
+## 1.2. Book
 
+* Sách DL Ian Goodfellow
+* [Deep Learning Book Series · Introduction](https://hadrienj.github.io/posts/Deep-Learning-Book-Series-Introduction/)
+
+## 1.3. Other
+
+
+## 1.4. Project
+
+
+## 1.5. Topic
 
 
 # 2. Computer Vision
+
+## 2.1. Course
+
+
+## 2.2. Book
+
+
+## 2.3. Other
+
+
+## 2.4. Project
+
+
+## 2.5. Topic
 * Các kiến trúc mạng CNN
 * Object Detection
 * Face Recognition
 
 
 # 3. NLP
-* Course Cousera, CS224N, github ...
-* Sách theo chủ đề
+
+## 3.1. Course
+
+
+## 3.2. Book
+
+
+## 3.3. Other
+
+
+## 3.4. Project
+
+
+## 3.5. Topic
+
 
 # 4. Bigdata
 
+## 4.1. Course
+
+
+## 4.2. Book
+
+
+## 4.3. Other
+
+
+## 4.4. Project
+
+
+## 4.5. Topic
+
+
 # 5. Network Analysis
 
-# 6. Course
+## 5.1. Course
 
-## 6.1. Course Deep Learning Specialization Coursera
 
-### 6.1.1. Course Link
-* [Deep Learning Specialization](https://www.coursera.org/specializations/deep-learning) 
-* [Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning)
-* [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://www.coursera.org/learn/deep-neural-network)
-* [Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning-projects)
-* [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks)
-* [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models)
+## 5.2. Book
 
-### 6.1.2. Course Note
-* [DeepLearning.ai Courses Notes](https://github.com/mbadry1/DeepLearning.ai-Summary)
-* [Deep Learning Specialization by Andrew Ng — 21 Lessons Learned](https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c)
-* [Computer Vision by Andrew Ng — 11 Lessons Learned](https://towardsdatascience.com/computer-vision-by-andrew-ng-11-lessons-learned-7d05c18a6999)
 
-## 6.2. Course Kaggle
+## 5.3. Other
 
-### 1.2.1. Course Link
-* [How to Win a Data Science Competition: Learn from Top Kagglers](https://www.coursera.org/learn/competitive-data-science)
 
-### 6.2.2. Reference
-* [Materials for "How to Win a Data Science Competition: Learn from Top Kagglers" course](https://github.com/mervynlee94/Advance-Machine-Learning/tree/master/%20Course%202%20of%207:%20How%20to%20Win%20a%20Data%20Science%20Competition:%20Learn%20from%20Top%20Kagglers)
-* [AML-Specialization-Exercises-Coursera](https://github.com/IAmSuyogJadhav/AML-Specialization-Exercises-Coursera) 
+## 5.4. Project
 
-# 7. Library / Framework
 
-## 7.1. Tensorflow
+## 5.5. Topic
 
-### 7.1.1. Sách
+
+# 6. Library / Framework
+
+## 6.1. Tensorflow
+
+### 6.1.1. Sách
 * [Hands-on Machine Learning with Scikit-Learn and TensorFlow](https://github.com/ageron/handson-ml) 
 
-### 7.2.2. Khác
+### 6.2.2. Khác
 
 * Tensorflow basic
 	* [Introduction to Tensorflow](https://cs230-stanford.github.io/tensorflow-getting-started.html)
@@ -95,24 +149,40 @@ Tài liệu học tập
 	* [TensorFlow Guide](https://www.tensorflow.org/guide/)
 	* [Awesome TensorFlow](https://github.com/jtoy/awesome-tensorflow)
 
-## 7.2. Keras
+## 6.2. Keras
 
-### 7.2.1. Sách
+### 6.2.1. Sách
 * [Deep Learning with Python](https://github.com/fchollet/deep-learning-with-python-notebooks)
 
-### 7.2.2. Khác
+### 6.2.2. Khác
 * [Keras resources](https://github.com/fchollet/keras-resources)
 * [The Keras blog](https://blog.keras.io/)
 
-## 7.3. Gensim
+## 6.3. Gensim
 
-## 7.4. NLTK
+## 6.4. NLTK
 
-## 7.5. Spacy
+## 6.5. Spacy
 
 
+# 7. Chủ đề khác
 
-# 8. Chủ đề khác
+## 7.1. Course
+* [How to Win a Data Science Competition: Learn from Top Kagglers](https://www.coursera.org/learn/competitive-data-science)
+	* [Materials for "How to Win a Data Science Competition: Learn from Top Kagglers" course](https://github.com/mervynlee94/Advance-Machine-Learning/tree/master/%20Course%202%20of%207:%20How%20to%20Win%20a%20Data%20Science%20Competition:%20Learn%20from%20Top%20Kagglers)
+	* [AML-Specialization-Exercises-Coursera](https://github.com/IAmSuyogJadhav/AML-Specialization-Exercises-Coursera) 
+
+## 7.2. Book
+
+
+## 7.3. Other
+
+
+## 7.4. Project
+
+
+## 7.5. Topic
+
 * Optimizer: Momentum, Adam,...
 	* [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/)
 	* [Why Momentum Really Works](https://distill.pub/2017/momentum/) 
