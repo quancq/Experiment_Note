@@ -10,17 +10,26 @@ Tài liệu học tập
 	* [Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization](https://www.coursera.org/learn/deep-neural-network)
 	* [Structuring Machine Learning Projects](https://www.coursera.org/learn/machine-learning-projects)
 	* [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks)
-	* [] [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models)
+	* [ ] [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models)
 
 	* Course note
 		* [DeepLearning.ai Courses Notes](https://github.com/mbadry1/DeepLearning.ai-Summary)
 		* [Deep Learning Specialization by Andrew Ng — 21 Lessons Learned](https://towardsdatascience.com/deep-learning-specialization-by-andrew-ng-21-lessons-learned-15ffaaef627c)
 		* [Computer Vision by Andrew Ng — 11 Lessons Learned](https://towardsdatascience.com/computer-vision-by-andrew-ng-11-lessons-learned-7d05c18a6999)
 
+* [CS294-158 Deep Unsupervised Learning Spring 2019](https://sites.google.com/view/berkeley-cs294-158-sp19/)
+* [5194.01: Introduction to High-Performance Deep Learning](http://web.cse.ohio-state.edu/~panda.2/5194/)
+
+
+* [CS 236: Deep Generative Models](https://deepgenerativemodels.github.io/)
 * [CSC 321 Winter 2018 Intro to Neural Networks and Machine Learning](http://www.cs.toronto.edu/~rgrosse/courses/csc321_2018/)
 * [CMSC 35246 Deep Learning Spring 2017, University of Chicago](http://ttic.uchicago.edu/~shubhendu/Pages/CMSC35246.html)
-* [Introduction to Deep Learning Spring 2018](http://deeplearning.cs.cmu.edu/spring2018.html)
+* [Introduction to Deep Learning Spring 2018](http://deeplearning.cs.cmu.edu/)
 * [CS 598 LAZ: Cutting-Edge Trends in Deep Learning and Recognition](http://slazebni.cs.illinois.edu/spring17/) 
+* [Deep Learning](https://cedar.buffalo.edu/~srihari/CSE676/)
+* [CS7015: Deep Learning](https://www.cse.iitm.ac.in/~miteshk/CS7015.html)
+
+
 
 ## 1.2. Book
 
@@ -39,7 +48,7 @@ Tài liệu học tập
 # 2. Computer Vision
 
 ## 2.1. Course
-
+* [CS231n: Convolutional Neural Networks for Visual Recognition](http://cs231n.stanford.edu/)
 
 ## 2.2. Book
 
@@ -48,6 +57,17 @@ Tài liệu học tập
 
 
 ## 2.4. Project
+
+* Person/Vehicle/Object detection
+	* Free Anchor
+	* NAS
+
+* Multiple Object Tracking
+	* Sort, DeepSort
+
+* Person Re-identification
+
+* Image retrieval
 
 
 ## 2.5. Topic
@@ -182,6 +202,7 @@ Tài liệu học tập
 
 
 ## 7.5. Topic
+* ML/DL tips
 
 * Optimizer: Momentum, Adam,...
 	* [An overview of gradient descent optimization algorithms](http://ruder.io/optimizing-gradient-descent/)
