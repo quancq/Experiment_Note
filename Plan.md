@@ -65,21 +65,33 @@ Tài liệu học tập
 * Multiple Object Tracking
 	* Sort, DeepSort
 
+* Crowd counting
 * Person Re-identification
 
+* Unsupervised Image Classification
 * Image retrieval
+
+* Face Recognition
+
+* Video Summarization
+
+* Text detection
 
 
 ## 2.5. Topic
 * Các kiến trúc mạng CNN
 * Object Detection
 * Face Recognition
+* [EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks](https://arxiv.org/pdf/1905.11946v2.pdf)
 
 
 # 3. NLP
 
 ## 3.1. Course
 
+* [CS224n: Natural Language Processing with Deep Learning](http://web.stanford.edu/class/cs224n/)
+* [CS224U: Natural Language Understanding](http://web.stanford.edu/class/cs224u/)
+* [CMU CS 11-747, Spring 2019 Neural Networks for NLP](http://www.phontron.com/class/nn4nlp2019/)
 
 ## 3.2. Book
 
@@ -88,6 +100,16 @@ Tài liệu học tập
 
 
 ## 3.4. Project
+
+* Text Summarization
+
+* NER
+
+* IE (Event extraction, relation extraction,...)
+* Semantic Role Labeling
+* Coreference Resolution
+* Semantic Textual Similarity
+* Sửa lỗi chính tả VN
 
 
 ## 3.5. Topic
