@@ -64,7 +64,7 @@ Tài liệu học tập
 
 * Multiple Object Tracking
 	* Sort, DeepSort
-
+* Video object detection
 * Crowd counting
 * Person Re-identification
 
