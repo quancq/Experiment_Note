@@ -29,18 +29,38 @@ Hadoop Distributed File System (HDFS)
 	* FsImage (File System Image): lưu toàn bộ trạng thái của HDFS (nêu trên)
 	* EditLog: lưu các sự thay đổi của hệ thống file, ví dụ: khi tạo file mới, thay đổi hệ số bản sao dữ liệu,...
 	
-NameNode theo định kì sẽ nhận Heartbeat (một loại tin nhắn) từ các DataNode để kiểm tra các DataNode còn sống không. Nếu DataNode nào quá hạn mà không gửi tin nhắn thì NameNode coi nó đã chết và sẽ tạo các bản sao mới để duy trì được hệ số copy. Ngoài ra các DataNode còn gửi BlockReport (danh sách các block mà DataNode đó lưu trữ) cho NameNode.
+NameNode theo định kì sẽ nhận Heartbeat (một loại tin nhắn) từ các DataNode để kiểm tra các DataNode còn sống không. Nếu DataNode nào quá hạn mà không gửi tin nhắn thì NameNode coi nó đã chết và sẽ tạo các bản sao dữ liệu mới để duy trì được hệ số copy. Ngoài ra các DataNode còn gửi BlockReport (danh sách các block mà DataNode đó lưu trữ) cho NameNode.
 
 NameNode thực hiện 1 số chức năng: tạo mới, xóa file,...
 
 * DataNode: lưu trữ dữ liệu, thực hiện thao tác đọc - ghi dữ liệu. Định kì gửi Heartbeat, BlockReport tới NameNode để báo cáo.
 
-* Data blocks: Các file dữ liệu thường được chia nhỏ thành các block có kích thước quy định trước (trừ block cuối có thể có kích thước nhỏ hơn)
+* Data blocks: Các file dữ liệu thường được chia nhỏ thành các block có kích thước quy định trước (trừ block cuối có thể có kích thước nhỏ hơn). **Dữ liệu trong HDFS không thể sửa tùy ý** (chỉ được nối thêm hoặc cắt bớt).
 
-* Cơ chế tạo bản copy dữ liệu (Replicate)
-	* Vấn đề: Nếu tạo nhiều bản copy dữ liệu trên các máy cùng 1 rack thì nếu rack đó bị hỏng thì dữ liệu thực sự bị mất (*bỏ trứng cùng 1 giỏ*). Nếu các bản copy dữ liệu được phân tán ở các rack khác nhau thì sẽ tăng thời gian cho thao tác ghi file...
+* Cơ chế tạo bản copy dữ liệu (Replicate, chọn các máy tính nào để lưu các bản copy)
+	* Vấn đề của 2 hướng giải quyết: 
+		* Mọi bản copy dữ liệu đều lưu trên các máy cùng 1 rack. Nhược điểm là nếu rack đó bị hỏng thì dữ liệu thực sự bị mất (*bỏ trứng cùng 1 giỏ*) tức là khả năng chịu lỗi kém; mọi thao tác đọc đều phải đi qua rack này, tạo ra nút cổ chai. Ưu điểm là thời gian ghi dữ liệu nhỏ
+		* Các bản copy dữ liệu được phân tán ở các rack khác nhau. Nhược điểm là thời gian cho thao tác ghi file lớn bởi vì thời gian truyền dữ liệu giữa 2 máy cùng rack là ít hơn thời gian truyền giữa 2 máy khác rack. Ưu điểm là tận dụng được băng thông của nhiều switch, cân bằng tải sẽ tốt hơn.
+	
+	![HadoopCluster](Images/HadoopCluster.png)
+	
+	> **Thách thức**: khả năng chịu lỗi, khả năng sẵn dùng của dữ liệu, tối ưu băng thông mạng, giảm thời gian đọc - ghi dữ liệu
+	
+	* Cơ chế sử dụng: để cân bằng được các yêu cầu trên, thuật toán sẽ xem xét đến các máy (node) và các rack. Nếu cần lưu 3 bản dữ liệu, bản 1 được lưu tại 1 random DataNode ở rack R1, 2 bản còn lại được lưu tại 2 DataNode khác nhau nhưng cùng thuộc rack R2. Nếu số bản copy > 3 thì các bản copy tiếp sẽ được lưu trên các rack khác, cố gắng đảm bảo số bản copy trên mỗi rack nhỏ hơn 1 ngưỡng quy định. Thuật toán này mang ưu điểm của cả 2 hướng tiếp cận trên.
 
 * Quy trình đọc ghi dữ liệu
+	* Thao tác ghi
+	Các block được ghi song song với nhau. Mỗi thao tác ghi 1 block dữ liệu gồm 3 giai đoạn là: thiết lập pipeline, truyền dữ liệu, kết thúc pipeline
+		* Thiết lập pipeline
+		![SetupPipeline](Images/HDFS_SetupPipeline.png) 
+		* Truyền và ghi dữ liệu
+		![WriteData](Images/HDFS_WriteData.png) 
+		* Kết thúc pipeline
+		![ShutdownPipeline](Images/HDFS_ShutdownPipeline.png) 
+	
+	* Thao tác đọc
+	NameNode sẽ lựa chọn bản dữ liệu gần nhất đối với client để giảm thời gian truyền dữ liệu
+	![ReadData](Images/HDFS_ReadData.png) 
 
 * Sử dụng nhiều NameNode
 * Cân bằng tải
