@@ -4,7 +4,28 @@ PyTorch
 # Đồ thị tính toán và cách PyTorch tính toán đạo hàm
 
 * PyTorch là thư viện Deep Learning. Do đó cần có cơ chế tự động tính lan truyền tiến và ngược mà không phụ thuộc vào kiến trúc mạng mà người lập trình xây dựng.
-* PyTorch dùng khái niệm đồ thị tính toán (Computation graph) để thực hiện công việc này.
+* PyTorch dùng khái niệm đồ thị tính toán (Computation graph) để thực hiện công việc tính đạo hàm.
+
+* Khi user định nghĩa kiến trúc mạng, tức là định nghĩa quan hệ tính toán giữa các tensor thì PyTorch xây dựng đồ thị tính toán.
+
+![ ](./Images/computation_graph.png)
+
+* Để tính đạo hàm (VD dL/da) thì dùng quy tắc đạo hàm chuỗi (chain rule) như sau
+
+![ ](./Images/Gradient_MultiPath.jpg)
+
+* Giải thích công thức
+	* Để tính giá trị L thì có 2 con đường mà giá trị a đóng góp đó là a -> c -> d -> L và a -> b -> d -> L
+	* Mỗi đường đi sẽ tính đạo hàm bằng quy tắc chuỗi (nhân các giá trị đạo hàm local dọc theo đường đi đó)
+	* Cuối cùng + các giá trị đạo hàm của các đường đi khác nhau lại
+
+* Về thư viện Pytorch
+	* Mỗi tensor (L, d, a,...) đều có thuộc tính ``grad_fn`` là toán tử sinh ra giá trị tensor này (VD ``d.grad_fn == AddBackward``, tức là toán tử +) và có thuộc tính ``grad`` chứa giá trị đạo hàm của 1 biến nào đó theo biến tensor này.
+	* Mỗi toán tử (hàm) có kiểu kế thừa từ ``nn.autograd.function``. Đều phải implement 2 hàm là forward và backward. Ví dụ khi cài đặt custom function được trình bày ở phần sau.
+	* Khi cần tính đạo hàm của L theo các biến thì gọi hàm ``L.backward()``. PyTorch sẽ lan truyền việc tính đạo hàm một cách đệ quy như sau
+		* Xét thời điểm hiện tại, đã có đạo hàm L theo biến b = f(a,w1) (giống hình). Cần tính đạo hàm dL/da, dL/dw1. Từ b, tìm được hàm f tạo ra b bởi thuộc tính ``grad_fn``. Tính đạo hàm df/da, df/dw1 (được cài đặt trong hàm backward của function), hàm backward sẽ return 2 giá trị dL/da, dL/dw1 bằng chain rule, các giá trị cần thiết để tính đạo hàm được lưu trong context khi gọi hàm forward.
+		* Tiếp tục đệ quy đối với các hàm sinh ra giá trị a, w1.
+
 
 # Các thành phần chính
 
