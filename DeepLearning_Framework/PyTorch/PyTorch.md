@@ -1,6 +1,11 @@
 PyTorch
 ===================
 
+# Đồ thị tính toán và cách PyTorch tính toán đạo hàm
+
+* PyTorch là thư viện Deep Learning. Do đó cần có cơ chế tự động tính lan truyền tiến và ngược mà không phụ thuộc vào kiến trúc mạng mà người lập trình xây dựng.
+* PyTorch dùng khái niệm đồ thị tính toán (Computation graph) để thực hiện công việc này.
+
 # Các thành phần chính
 
 * Tensor: mảng nhiều chiều lưu trữ dữ liệu
@@ -18,6 +23,8 @@ PyTorch
 
 
 # References
+
+* [PyTorch 101](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
 
 * [A comprehensive overview of PyTorch](https://medium.com/@layog/a-comprehensive-overview-of-pytorch-7f70b061963f)
 
