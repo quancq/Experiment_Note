@@ -26,6 +26,11 @@ PyTorch
 		* Xét thời điểm hiện tại, đã có đạo hàm L theo biến b = f(a,w1) (giống hình). Cần tính đạo hàm dL/da, dL/dw1. Từ b, tìm được hàm f tạo ra b bởi thuộc tính ``grad_fn``. Tính đạo hàm df/da, df/dw1 (được cài đặt trong hàm backward của function), hàm backward sẽ return 2 giá trị dL/da, dL/dw1 bằng chain rule, các giá trị cần thiết để tính đạo hàm được lưu trong context khi gọi hàm forward.
 		* Tiếp tục đệ quy đối với các hàm sinh ra giá trị a, w1.
 
+* Phân biệt 1 số khái niệm
+	* ``requires_grad``: thuộc tính Boolean của tensor. Khi giá trị này là False thì giá trị ``grad_fn`` của tensor đó là None. Thiết lập giá trị False khi không muốn tính đạo hàm theo tensor này. Khi mọi input tensor đều có ``requires_grad=False`` thì tensor output sẽ có ``requires_grad=False``. Chỉ có leaf tensor mới có thể thay đổi giá trị này (c = a + b thì c không phải leaf tensor).
+	* ``detach``: là hàm của tensor. Gọi hàm này sẽ tạo ra tensor mới có chung vùng nhớ với tensor gốc, nhưng tensor mới có ``requires_grad=False``. Khi không muốn đạo hàm lan truyền về các tensor trước (đạo hàm sẽ lan truyền đến tensor hiện tại và dừng) thì dùng detach.
+	* ``no_grad``: sử dụng trong ``with torch.no_grad():``. Các tensor tạo ra trong đoạn code đó sẽ có ``requires_grad=False``. Hàm này có thể dùng trong quá trình eval.
+	* ``clone``: tạo ra tensor mới với vùng nhớ khác, nhưng có giá trị thuộc tính ``requires_grad`` giống tensor gốc, và các kết nối trong computation graph giống tensor gốc. Điều này cho phép tính toán đạo hàm của 2 tensor này giống nhau.
 
 # Các thành phần chính
 
