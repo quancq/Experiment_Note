@@ -43,19 +43,33 @@ PyTorch
 	* Để tạo ra custom module thì cần định nghĩa class kế thừa từ class nn.module. Đồng thời override hàm `__init__` và `forward`
 
 
+* Class ``nn.Sequential``: dùng để ghép nhiều đối tượng module lại theo 1 trình tự tuần tự (xếp chồng các layer theo tuần tự).
 
+* Class ``Dataset``: Để định nghĩa dataset của bài toán thì thường dùng class kế thừa từ ``torch.utils.data.Dataset``. Có thể iterate qua đối tượng dataset để get sample. Cần định nghĩa 3 hàm
+	* ``__init__``: lưu các thuộc tính liên quan đến data, có thể lưu các hàm transform, data augmentation.
+	* ``__len__``: trả về số sample có trong dataset
+	* ``__getitem__``: nhận tham số i là index của phần tử cần lấy trong dataset, trả về phần tử cần lấy
 
-
+* Class ``Dataloader``: Khởi tạo đối tượng thuộc kiểu ``Dataloader`` và truyền tham số là đối tượng có kiểu ``Dataset``. Dataloader sẽ giúp duyệt qua dataset với 1 số tiện ích: shuffle data sau mỗi epoch, get data theo batch, load nhiều sample nhanh bằng cơ chế sử dụng thread,...
 
 
 # References
 
 * [PyTorch 101](https://blog.paperspace.com/pytorch-101-understanding-graphs-and-automatic-differentiation/)
 
+* [CS230](https://cs230.stanford.edu/blog/pytorch/)
+
+* [Official PyTorch Tutorial](https://pytorch.org/tutorials/)
+
 * [A comprehensive overview of PyTorch](https://medium.com/@layog/a-comprehensive-overview-of-pytorch-7f70b061963f)
 
-* [CS230](https://cs230-stanford.github.io/pytorch-getting-started.html)
+* [PyTorch Autograd](https://towardsdatascience.com/pytorch-autograd-understanding-the-heart-of-pytorchs-magic-2686cd94ec95)
 
+* [Project Template](https://github.com/moemen95/Pytorch-Project-Template)
+
+* [](https://github.com/allenai/writing-code-for-nlp-research-emnlp2018/blob/master/writing_code_for_nlp_research.pdf)
+
+* Flair, AllenNLP, FairSeq, Torchtext, ...
 * [PyTorch tutorial distilled](https://towardsdatascience.com/pytorch-tutorial-distilled-95ce8781a89c)
 
 
@@ -67,7 +81,7 @@ PyTorch
 * [https://github.com/yunjey/pytorch-tutorial](https://github.com/yunjey/pytorch-tutorial)
 
 
-* [Official PyTorch Tutorial](https://pytorch.org/tutorials/)
+
 
 
 * [Lecture Stanford CS231n](http://cs231n.stanford.edu/slides/2017/cs231n_2017_lecture8.pdf)
@@ -87,7 +101,7 @@ PyTorch
 
 
 
-* [Project Template](https://github.com/moemen95/Pytorch-Project-Template)
+
 
 * [FastAI PyTorch Tutorial](https://forums.fast.ai/t/new-pytorch-tutorial-draft-feedback-welcome/22208)
 
