@@ -11,7 +11,7 @@ Flair
 * Class Label dùng để mô hình hóa tag
 * Mỗi token có thể gắn các tag (pos, ner). Có 2 hàm ``token.add_tag('ner', 'PER')``, ``token.get_tag('ner')`` để thao tác với token và tag. Mỗi tag có thuộc tính ``tag.value`` (text của tag, vd PER) và ``tag.score`` là độ tin cậy dự đoán (nếu tự add thì score = 1.0)
 * Mỗi sentence có thể gắn 1/nhiều label (nhãn cho bài toán classification)
-	* Thêm label: ``sentence.add_label('sports')``
+	* Thêm label: ``sentence.add_label('topic', 'sports')``
 	* Truy cập label: ``sentence.labels``
 
 * Sử dụng Flair cho việc tagging (ner, pos,...)
@@ -23,8 +23,10 @@ Flair
 	* Sử dụng pretrained model: Glove, Word2vec, Fasttext, Transformer (Bert,...),... (Flair dùng gensim để load Word2vec, Fasttext, dùng transformer huggingface để load transformer model)
 	* Tự train trên dữ liệu riêng: Flair, PooledFlair
 
-* Document embedding: Flair hỗ trợ 2 kiểu document embedding (đều cần sử dụng word embedding)
+* Document embedding: Flair hỗ trợ 4 kiểu document embedding (2 cáu đầu cần sử dụng word embedding)
 	* Pooling: min, max, mean. Có thể transform nonlinear các word embedding trước khi vào pooling của doc embedding
 	* RNN: dùng kiểu embedding này thì cần finetune trên downstream task. Khi train Flair model (classification, seq tagging) thì sẽ train luôn cả mạng RNN này.
+	* Transformer
+	* SentenceTransformer: model được pretrained hướng đến việc sinh ra biểu diễn câu
 	
 * Train Flair embedding
